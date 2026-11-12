@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
-  <title id="title">Aperçu illustratif de Modèle 80</title>
+  <title id="title">Aperçu illustratif de la machine à écrire</title>
   <desc id="desc">Illustration de la scène de l’application : machine à écrire couleur crème, feuille, clavier AZERTY et ambiance sombre vintage.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5a4632"/><stop offset=".58" stop-color="#3a2c1e"/><stop offset="1" stop-color="#241a11"/></linearGradient>
@@ -11,7 +11,7 @@
   </defs>
   <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
   <ellipse cx="600" cy="220" rx="620" ry="390" fill="url(#glow)"/>
-  <text x="54" y="66" fill="#f2ead4" font-family="Georgia,serif" font-size="18" letter-spacing="4" opacity=".7">MODÈLE 80 · ATELIER D’ÉCRITURE</text>
+  <text x="54" y="66" fill="#f2ead4" font-family="Georgia,serif" font-size="18" letter-spacing="4" opacity=".7">MACHINE À ÉCRIRE · ATELIER D’ÉCRITURE</text>
   <text x="54" y="101" fill="#f2ead4" font-family="Georgia,serif" font-size="13" letter-spacing="1" opacity=".5">UNE PAUSE DANS LE TEMPS</text>
   <rect x="1090" y="30" width="62" height="62" rx="31" fill="#1e160c" fill-opacity=".7" stroke="#f0e6cf" stroke-opacity=".35"/>
   <path d="M1114 52v18l15-9z" fill="#f0e6cf"/>
@@ -35,8 +35,8 @@
   <path d="M350 453h499" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
   <circle cx="382" cy="469" r="22" fill="#171717" stroke="#8c1e1e" stroke-width="6"/>
   <circle cx="817" cy="469" r="22" fill="#171717" stroke="#8c1e1e" stroke-width="6"/>
-  <text x="352" y="581" fill="#8a7c5c" font-family="Georgia,serif" font-size="15" letter-spacing="3">MODÈLE 80</text>
-  <text x="352" y="598" fill="#a4967a" font-family="monospace" font-size="9" letter-spacing="1">MACHINE À ÉCRIRE · FABRICATION FRANÇAISE</text>
+  <text x="352" y="581" fill="#8a7c5c" font-family="Georgia,serif" font-size="15" letter-spacing="3">MACHINE À ÉCRIRE</text>
+  <text x="352" y="598" fill="#a4967a" font-family="monospace" font-size="9" letter-spacing="1">ÉDITION 1980 · FABRICATION FRANÇAISE</text>
   <!-- Typebars -->
   <g stroke="#bfc4c8" stroke-width="5" stroke-linecap="round">
     <path d="M495 441l50-53"/><path d="M520 441l37-66"/><path d="M545 441l24-72"/><path d="M570 441l12-76"/><path d="M595 441l0-78"/><path d="M620 441l-12-76"/><path d="M645 441l-24-72"/><path d="M670 441l-37-66"/><path d="M695 441l-50-53"/>

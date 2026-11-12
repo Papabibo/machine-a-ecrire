@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Modèle 80 — logo d’une machine à écrire" width="180">
+  <img src="assets/logo.svg" alt="Machine à écrire — logo" width="180">
 </p>
 
-<h1 align="center">MODÈLE 80</h1>
+<h1 align="center">Machine à écrire</h1>
 <p align="center"><strong>Une machine à écrire vintage, directement dans votre navigateur.</strong><br>
 <strong>A vintage typewriter experience, right in your browser.</strong></p>
 
@@ -23,12 +23,12 @@
 
 ### L’expérience
 
-**Modèle 80** est une simulation interactive inspirée des machines à écrire mécaniques. Une scène dessinée en CSS, une feuille qui se remplit au fil de la frappe et des effets sonores synthétisés par le navigateur recréent l’atmosphère d’un atelier d’écriture vintage — sans framework ni installation.
+**Machine à écrire** est une simulation interactive inspirée des machines à écrire mécaniques. Une scène dessinée en CSS, une feuille qui se remplit au fil de la frappe et des effets sonores synthétisés par le navigateur recréent l’atmosphère d’un atelier d’écriture vintage — sans framework ni installation.
 
 ### Aperçu
 
 <p align="center">
-  <img src="assets/preview.svg" alt="Illustration de l’interface de la machine à écrire Modèle 80" width="800">
+  <img src="assets/preview.svg" alt="Illustration de l’interface de la machine à écrire" width="800">
 </p>
 
 <p align="center"><em>Aperçu illustratif en SVG — ce visuel est une illustration de l’interface, pas une capture d’écran du navigateur.</em></p>

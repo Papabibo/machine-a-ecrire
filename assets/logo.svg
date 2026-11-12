@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
-  <title id="title">Modèle 80</title>
+  <title id="title">Machine à écrire</title>
   <desc id="desc">Illustration minimaliste d’une machine à écrire rétro.</desc>
   <defs>
     <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
@@ -23,5 +23,5 @@
     <circle cx="47" cy="122" r="5"/><circle cx="63" cy="122" r="5"/><circle cx="79" cy="122" r="5"/><circle cx="95" cy="122" r="5"/><circle cx="111" cy="122" r="5"/><circle cx="127" cy="122" r="5"/>
     <circle cx="55" cy="138" r="5"/><circle cx="71" cy="138" r="5"/><circle cx="87" cy="138" r="5"/><circle cx="103" cy="138" r="5"/><circle cx="119" cy="138" r="5"/>
   </g>
-  <text x="90" y="166" fill="#e6d9bb" font-family="Georgia,serif" font-size="10" letter-spacing="2" text-anchor="middle">MODÈLE 80</text>
+  <text x="90" y="166" fill="#e6d9bb" font-family="Georgia,serif" font-size="10" letter-spacing="2" text-anchor="middle">MACHINE À ÉCRIRE</text>
 </svg>
