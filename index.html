@@ -47,7 +47,7 @@ body{
 }
 .carriage.returning{transition:transform .45s cubic-bezier(.2,.85,.25,1)}
 .platen{
-  position:absolute;left:40px;top:296px;width:920px;height:34px;border-radius:17px;
+  position:absolute;left:40px;top:296px;width:920px;height:34px;border-radius:17px;z-index:2;
   background:linear-gradient(#5a5a5a,#262626 40%,#0c0c0c 80%,#1a1a1a);
   box-shadow:0 3px 6px rgba(0,0,0,.5);
 }
@@ -56,7 +56,7 @@ body{
   background:rgba(255,255,255,.14);
 }
 .platen-knob{
-  position:absolute;top:291px;width:48px;height:44px;border-radius:50%;
+  position:absolute;top:291px;width:48px;height:44px;border-radius:50%;z-index:2;
   background:radial-gradient(circle at 35% 30%,#5c5c5c,#222 70%);
   box-shadow:0 3px 6px rgba(0,0,0,.5);
   display:flex;align-items:center;justify-content:center;
@@ -65,7 +65,7 @@ body{
 .platen-knob.left{left:2px}
 .platen-knob.right{right:2px}
 .paper-window{
-  position:absolute;left:476px;top:-96px;width:420px;height:400px;overflow:hidden;
+  position:absolute;left:476px;top:-96px;width:420px;height:400px;overflow:hidden;z-index:1;
   background:linear-gradient(175deg,#ffffff,#f6f2e6 70%,#efe9d8);
   border-radius:3px;box-shadow:0 8px 22px rgba(0,0,0,.25);transform:rotate(-.4deg);
 }
@@ -78,7 +78,7 @@ body{
   color:#2b2b33;white-space:pre;transition:transform .18s ease;
 }
 .scale{
-  position:absolute;left:500px;top:290px;height:14px;border-radius:2px;
+  position:absolute;left:500px;top:290px;height:14px;border-radius:2px;z-index:3;
   background:
     repeating-linear-gradient(90deg, rgba(255,255,255,.25) 0 1px, transparent 1px var(--cw,8px)),
     repeating-linear-gradient(90deg, rgba(255,120,120,.55) 0 1px, transparent 1px var(--cw10,80px)),
@@ -277,8 +277,8 @@ body{
 
   function render() {
     paper.textContent = lines.join('\n');
-    const shift = Math.max(0, (PAD_TOP + (li + 1) * LINE_H) - (paperWindow.clientHeight - 10));
-    paper.style.transform = `translateY(${-shift}px)`;
+    const t = (paperWindow.clientHeight - 54) - (PAD_TOP + li * LINE_H);
+    paper.style.transform = `translateY(${t}px)`;
   }
 
   function moveCarriage() {
