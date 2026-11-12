@@ -9,33 +9,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream1:#f2ead4;
-  --cream2:#ddd2b4;
-  --cream3:#b9ac8a;
+  --gold:#d4af37;
+  --gold-dark:#8a743a;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
 body{
   background:
-    radial-gradient(1200px 600px at 50% 12%, rgba(255,220,160,.10), transparent 60%),
-    radial-gradient(900px 500px at 50% 110%, rgba(0,0,0,.55), transparent 60%),
-    linear-gradient(160deg,#5a4632,#3a2c1e 55%,#241a11);
+    radial-gradient(1400px 700px at 50% 8%, #ffffff, transparent 60%),
+    radial-gradient(1000px 600px at 50% 115%, rgba(0,0,0,.10), transparent 60%),
+    linear-gradient(180deg,#f7f6f2,#e6e3da 60%,#d8d4c8);
   font-family:"Special Elite","Courier New",monospace;
   cursor:default;
 }
 #stage::after{
   content:"";position:fixed;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0,0,0,.55));
+  background:radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0,0,0,.16));
 }
 #scene{position:absolute;left:50%;top:50%;width:1360px;height:820px;transform:translate(-50%,-50%)}
 .hint{
-  position:absolute;left:40px;top:28px;color:rgba(255,240,210,.55);
+  position:absolute;left:40px;top:28px;color:rgba(60,50,35,.65);
   font-size:15px;line-height:1.8;letter-spacing:.5px;
 }
 .machine{position:absolute;left:260px;top:210px;width:1000px;height:590px}
 .machine-shadow{
   position:absolute;left:20px;top:530px;width:980px;height:60px;border-radius:50%;
-  background:radial-gradient(ellipse at center, rgba(0,0,0,.55), transparent 70%);
+  background:radial-gradient(ellipse at center, rgba(0,0,0,.30), transparent 70%);
 }
 .rail{
   position:absolute;left:0;top:318px;width:1000px;height:12px;border-radius:6px;
@@ -68,7 +67,7 @@ body{
 .paper-window{
   position:absolute;left:126px;top:-96px;width:420px;height:400px;overflow:hidden;
   background:linear-gradient(175deg,#ffffff,#f6f2e6 70%,#efe9d8);
-  border-radius:3px;box-shadow:0 8px 22px rgba(0,0,0,.45);transform:rotate(-.4deg);
+  border-radius:3px;box-shadow:0 8px 22px rgba(0,0,0,.25);transform:rotate(-.4deg);
 }
 .paper-window::before{
   content:"";position:absolute;left:24px;top:0;bottom:0;width:1px;
@@ -108,15 +107,25 @@ body{
 .body-front{
   position:absolute;left:-20px;top:322px;width:1040px;height:252px;z-index:3;
   border-radius:26px 26px 44px 44px;
-  background:linear-gradient(165deg,var(--cream1),var(--cream2) 55%,var(--cream3));
-  box-shadow:inset 0 2px 0 rgba(255,255,255,.6), inset 0 -14px 24px rgba(0,0,0,.18), 0 16px 30px rgba(0,0,0,.45);
+  background:linear-gradient(165deg,#3d3d44 0%,#191920 38%,#0a0a0d 72%,#202027);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.20),
+    inset 0 -18px 30px rgba(0,0,0,.55),
+    inset 0 0 0 2px rgba(212,175,55,.65),
+    inset 0 0 0 5px #0c0c0e,
+    inset 0 0 0 6px rgba(212,175,55,.35),
+    0 18px 34px rgba(0,0,0,.35);
 }
-.brand{position:absolute;left:26px;bottom:14px;font-size:17px;color:#8a7c5c;letter-spacing:2px}
-.brand small{display:block;font-size:10px;letter-spacing:1px;color:#a4967a;margin-top:2px}
+.body-front::before{
+  content:"";position:absolute;left:28px;right:28px;top:10px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,55,.7) 18%,rgba(212,175,55,.7) 82%,transparent);
+}
+.brand{position:absolute;left:26px;bottom:14px;font-size:17px;color:#d4af37;letter-spacing:3px;text-shadow:0 1px 1px rgba(0,0,0,.8)}
+.brand small{display:block;font-size:10px;letter-spacing:1px;color:rgba(212,175,55,.65);margin-top:2px}
 .spool{
   position:absolute;top:14px;width:58px;height:58px;border-radius:50%;
-  background:radial-gradient(circle at 40% 35%,#4a4a4a,#111 65%);
-  box-shadow:0 3px 6px rgba(0,0,0,.4), inset 0 0 0 6px rgba(140,30,30,.9);
+  background:radial-gradient(circle at 40% 35%,#4a4a52,#111 65%);
+  box-shadow:0 3px 6px rgba(0,0,0,.4), inset 0 0 0 3px rgba(212,175,55,.8);
 }
 .spool.left{left:36px}
 .spool.right{right:36px}
@@ -140,23 +149,28 @@ body{
 .krow{display:flex;gap:8px}
 .key{
   width:38px;height:38px;border-radius:50%;
-  background:radial-gradient(circle at 35% 28%,#fdf8ea,#d9cfb2 65%,#b5a988);
-  box-shadow:0 3px 0 #8f866c, 0 6px 10px rgba(0,0,0,.35);
+  background:radial-gradient(circle at 35% 28%,#4a4a52,#17171a 60%,#000);
+  box-shadow:
+    0 3px 0 #6b5a2a, 0 6px 10px rgba(0,0,0,.35),
+    inset 0 0 0 1.5px rgba(212,175,55,.7),
+    inset 0 1px 2px rgba(255,255,255,.25);
   display:flex;align-items:center;justify-content:center;
-  font:700 12px "Courier New",monospace;color:#4a4232;user-select:none;
+  font:700 12px "Courier New",monospace;color:#e8c96a;user-select:none;
   transition:transform .05s, box-shadow .05s;
 }
 .key.wide{width:64px;border-radius:20px;font-size:10px}
 .key.space{width:210px;border-radius:20px}
 .key.down{
   transform:translateY(3px);
-  box-shadow:0 0 0 #8f866c, 0 2px 5px rgba(0,0,0,.4);
-  background:radial-gradient(circle at 35% 28%,#e8dfc6,#c4b896 65%,#a2966f);
+  box-shadow:
+    0 0 0 #6b5a2a, 0 2px 5px rgba(0,0,0,.4),
+    inset 0 0 0 1.5px rgba(212,175,55,.7);
+  background:radial-gradient(circle at 35% 28%,#2c2c31,#0c0c0e 60%,#000);
 }
 #soundBtn{
   position:fixed;right:18px;top:16px;z-index:60;width:42px;height:42px;border-radius:50%;
-  border:1px solid rgba(240,230,207,.3);background:rgba(30,22,12,.6);
-  color:#f0e6cf;font-size:18px;cursor:pointer;
+  border:1px solid rgba(140,116,58,.45);background:rgba(255,255,255,.7);
+  color:#3a3a3a;font-size:18px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.12);
 }
 #capture{
   position:fixed;top:0;left:0;width:2px;height:2px;opacity:0;
@@ -164,24 +178,24 @@ body{
 }
 #boot{
   position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;
-  background:rgba(12,8,4,.82);transition:opacity .5s;
+  background:rgba(247,246,242,.92);transition:opacity .5s;
 }
 #boot.hidden{opacity:0;pointer-events:none}
 #boot .card{
-  text-align:center;color:#f0e6cf;padding:40px 60px;border-radius:10px;
-  border:1px solid rgba(240,230,207,.25);background:rgba(30,22,12,.6);
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  text-align:center;color:#26221a;padding:40px 60px;border-radius:10px;
+  border:1px solid rgba(140,116,58,.45);background:rgba(255,255,255,.78);
+  box-shadow:0 20px 60px rgba(0,0,0,.15);
 }
-#boot h1{font-size:44px;letter-spacing:6px;font-weight:400}
-#boot p{margin-top:10px;font-size:15px;color:rgba(240,230,207,.75)}
-#boot .small{margin-top:22px;font-size:12px;line-height:1.8;color:rgba(240,230,207,.5)}
+#boot h1{font-size:44px;letter-spacing:6px;font-weight:400;color:#0d0d0f}
+#boot p{margin-top:10px;font-size:15px;color:rgba(40,35,25,.75)}
+#boot .small{margin-top:22px;font-size:12px;line-height:1.8;color:rgba(40,35,25,.55)}
 #startBtn{
   margin-top:26px;padding:12px 34px;cursor:pointer;
-  font:400 16px "Special Elite","Courier New",monospace;letter-spacing:2px;color:#2e2416;
-  background:linear-gradient(#f2ead4,#cfc3a2);border:1px solid #8f866c;border-radius:24px;
-  box-shadow:0 4px 0 #8f866c, 0 8px 16px rgba(0,0,0,.4);
+  font:400 16px "Special Elite","Courier New",monospace;letter-spacing:2px;color:#e8c96a;
+  background:linear-gradient(#2c2c31,#0c0c0e);border:1px solid #8a743a;border-radius:24px;
+  box-shadow:0 4px 0 #6b5a2a, 0 8px 16px rgba(0,0,0,.25);
 }
-#startBtn:active{transform:translateY(3px);box-shadow:0 1px 0 #8f866c}
+#startBtn:active{transform:translateY(3px);box-shadow:0 1px 0 #6b5a2a}
 </style>
 </head>
 <body>
