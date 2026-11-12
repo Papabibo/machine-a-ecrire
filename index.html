@@ -130,22 +130,18 @@ body{
 }
 .spool.left{left:36px}
 .spool.right{right:36px}
-.rail-guide{
-  position:absolute;left:505px;top:-432px;width:4px;height:432px;border-radius:2px;
-  background:linear-gradient(90deg,#4a4a52,#1a1a1e 55%,#3a3a40);opacity:.85;
-  box-shadow:0 0 3px rgba(0,0,0,.35);
-}
 .striker-carriage{
   position:absolute;left:0;top:0;width:100%;height:0;z-index:4;pointer-events:none;
-  transition:transform .2s ease;
 }
-.striker-carriage::before{
-  content:"";position:absolute;left:505px;top:-24px;width:14px;height:6px;border-radius:3px;
-  background:linear-gradient(#5a5a62,#222);
+.striker-base{
+  position:absolute;left:505px;top:-22px;width:20px;height:24px;z-index:5;border-radius:4px;
+  background:linear-gradient(#5a5a62,#1a1a1e);
+  box-shadow:0 1px 3px rgba(0,0,0,.4), inset 0 0 0 1px rgba(212,175,55,.4);
 }
-.striker-carriage::after{
-  content:"";position:absolute;left:501px;top:-36px;width:12px;height:24px;border-radius:4px;
-  background:linear-gradient(#5a5a62,#1a1a1e);box-shadow:0 1px 3px rgba(0,0,0,.4);
+.striker-rod{
+  position:absolute;left:510px;width:6px;z-index:4;border-radius:2px;
+  background:linear-gradient(90deg,#4a4a52,#1a1a1e 55%,#3a3a40);
+  transition:top .2s ease, height .2s ease;
 }
 .basket{position:absolute;left:480px;top:-34px;width:80px;height:38px;z-index:3}
 .basket i{
@@ -153,12 +149,13 @@ body{
   background:linear-gradient(#c8cdd2,#6a6f74);transform-origin:1px 38px;
 }
 .striker{
-  position:absolute;left:515px;top:-46px;width:10px;height:50px;z-index:4;
-  transform-origin:5px 50px;border-radius:3px 3px 2px 2px;
+  position:absolute;left:515px;top:-386px;width:10px;height:12px;z-index:6;
+  transform-origin:center;border-radius:2px;
   background:linear-gradient(#e6e9ec,#7c8186);box-shadow:0 0 4px rgba(0,0,0,.35);
+  transition:top .2s ease;
 }
 .striker::after{
-  content:"";position:absolute;left:2px;top:0;width:6px;height:8px;background:#222;border-radius:2px;
+  content:"";position:absolute;left:1px;top:0;width:8px;height:5px;background:#222;border-radius:2px;
 }
 .keyboard{
   position:absolute;left:50%;bottom:12px;transform:translateX(-50%);
@@ -240,9 +237,10 @@ body{
       <div class="body-front">
         <div class="spool left" id="spoolL"></div>
         <div class="spool right" id="spoolR"></div>
-        <div class="rail-guide"></div>
         <div class="striker-carriage" id="strikerCarriage">
           <div class="basket" id="basket"></div>
+          <div class="striker-base"></div>
+          <div class="striker-rod" id="rod"></div>
           <div class="striker" id="striker"></div>
         </div>
         <div class="brand">MACHINE&nbsp;À&nbsp;ÉCRIRE<small>édition 1980 &middot; fabrication française</small></div>
@@ -274,7 +272,7 @@ body{
   const scene = $('#scene'), machine = $('#machine'), carriage = $('#carriage'),
         paperWindow = $('#paperWindow'), paper = $('#paper'), scale = $('#scale'),
         striker = $('#striker'), pointer = $('#pointer'), ta = $('#capture'),
-        strikerCarriage = $('#strikerCarriage'),
+        rod = $('#rod'),
         spoolL = $('#spoolL'), spoolR = $('#spoolR'), basket = $('#basket'),
         knob = document.querySelector('.platen-knob.left');
 
@@ -301,9 +299,12 @@ body{
     paper.textContent = lines.join('\n');
     const t = Math.min(0, 336 - li * LINE_H);
     paper.style.transform = `translateY(${t}px)`;
-    const ride = Math.min(0, li * LINE_H - 334);
-    strikerCarriage.style.transform = `translateY(${ride}px)`;
+    const ride = Math.min(-24, li * LINE_H - 360);
     pointer.style.transform = `translateY(${ride}px)`;
+    const h = Math.max(22, 358 - li * LINE_H);
+    rod.style.top = (-22 - h) + 'px';
+    rod.style.height = h + 'px';
+    striker.style.top = (-22 - h - 6) + 'px';
   }
 
   function moveCarriage() {
@@ -313,10 +314,10 @@ body{
 
   function strike() {
     striker.animate([
-      { transform: 'rotate(42deg)' },
-      { transform: 'rotate(0deg)', offset: .3 },
-      { transform: 'rotate(42deg)' }
-    ], { duration: 130, easing: 'ease-out' });
+      { transform: 'translateY(-3px)' },
+      { transform: 'translateY(1px)', offset: .35 },
+      { transform: 'translateY(0)' }
+    ], { duration: 110, easing: 'ease-out' });
     machine.animate([
       { transform: 'translateY(0)' },
       { transform: 'translateY(1.5px)' },
