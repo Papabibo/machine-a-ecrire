@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Aperçu illustratif de Modèle 80</title>
+  <desc id="desc">Illustration de la scène de l’application : machine à écrire couleur crème, feuille, clavier AZERTY et ambiance sombre vintage.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5a4632"/><stop offset=".58" stop-color="#3a2c1e"/><stop offset="1" stop-color="#241a11"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#b18a57" stop-opacity=".22"/><stop offset="1" stop-color="#241a11" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f2ead4"/><stop offset=".55" stop-color="#ddd2b4"/><stop offset="1" stop-color="#b9ac8a"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#efe9d8"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9aa0a6"/><stop offset=".5" stop-color="#5c6166"/><stop offset="1" stop-color="#27292b"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.4" width="1.4" height="1.8"><feGaussianBlur stdDeviation="17"/></filter>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+  <ellipse cx="600" cy="220" rx="620" ry="390" fill="url(#glow)"/>
+  <text x="54" y="66" fill="#f2ead4" font-family="Georgia,serif" font-size="18" letter-spacing="4" opacity=".7">MODÈLE 80 · ATELIER D’ÉCRITURE</text>
+  <text x="54" y="101" fill="#f2ead4" font-family="Georgia,serif" font-size="13" letter-spacing="1" opacity=".5">UNE PAUSE DANS LE TEMPS</text>
+  <rect x="1090" y="30" width="62" height="62" rx="31" fill="#1e160c" fill-opacity=".7" stroke="#f0e6cf" stroke-opacity=".35"/>
+  <path d="M1114 52v18l15-9z" fill="#f0e6cf"/>
+  <ellipse cx="610" cy="604" rx="472" ry="35" fill="#090705" opacity=".65" filter="url(#shadow)"/>
+  <!-- Paper and typed lines -->
+  <rect x="422" y="142" width="356" height="330" rx="4" fill="url(#paper)" transform="rotate(-.5 422 142)"/>
+  <path d="M470 142v330" stroke="#be3c3c" stroke-opacity=".3"/>
+  <g fill="#34323a" font-family="monospace" font-size="17">
+    <text x="486" y="200">Chère machine,</text>
+    <text x="486" y="238">les idées prennent</text>
+    <text x="486" y="276">leur temps, une</text>
+    <text x="486" y="314">lettre après l’autre.</text>
+    <text x="486" y="390" opacity=".55">_</text>
+  </g>
+  <!-- Carriage and platen -->
+  <rect x="175" y="415" width="850" height="13" rx="6" fill="url(#metal)"/>
+  <rect x="206" y="392" width="788" height="38" rx="19" fill="#202020" stroke="#555" stroke-width="3"/>
+  <rect x="216" y="399" width="768" height="5" rx="2" fill="#fff" opacity=".15"/>
+  <circle cx="190" cy="411" r="25" fill="#282828"/><circle cx="1010" cy="411" r="25" fill="#282828"/>
+  <rect x="327" y="441" width="545" height="165" rx="22" fill="url(#cream)" stroke="#988b6d" stroke-width="3"/>
+  <path d="M350 453h499" stroke="#fff" stroke-opacity=".6" stroke-width="3"/>
+  <circle cx="382" cy="469" r="22" fill="#171717" stroke="#8c1e1e" stroke-width="6"/>
+  <circle cx="817" cy="469" r="22" fill="#171717" stroke="#8c1e1e" stroke-width="6"/>
+  <text x="352" y="581" fill="#8a7c5c" font-family="Georgia,serif" font-size="15" letter-spacing="3">MODÈLE 80</text>
+  <text x="352" y="598" fill="#a4967a" font-family="monospace" font-size="9" letter-spacing="1">MACHINE À ÉCRIRE · FABRICATION FRANÇAISE</text>
+  <!-- Typebars -->
+  <g stroke="#bfc4c8" stroke-width="5" stroke-linecap="round">
+    <path d="M495 441l50-53"/><path d="M520 441l37-66"/><path d="M545 441l24-72"/><path d="M570 441l12-76"/><path d="M595 441l0-78"/><path d="M620 441l-12-76"/><path d="M645 441l-24-72"/><path d="M670 441l-37-66"/><path d="M695 441l-50-53"/>
+  </g>
+  <circle cx="595" cy="364" r="9" fill="#252525"/>
+  <!-- Keyboard -->
+  <g fill="#f8f1de" stroke="#958a6d" stroke-width="2">
+    <circle cx="435" cy="500" r="14"/><circle cx="473" cy="500" r="14"/><circle cx="511" cy="500" r="14"/><circle cx="549" cy="500" r="14"/><circle cx="587" cy="500" r="14"/><circle cx="625" cy="500" r="14"/><circle cx="663" cy="500" r="14"/><circle cx="701" cy="500" r="14"/><circle cx="739" cy="500" r="14"/><circle cx="777" cy="500" r="14/>
+    <circle cx="454" cy="539" r="14"/><circle cx="492" cy="539" r="14"/><circle cx="530" cy="539" r="14"/><circle cx="568" cy="539" r="14"/><circle cx="606" cy="539" r="14"/><circle cx="644" cy="539" r="14"/><circle cx="682" cy="539" r="14"/><circle cx="720" cy="539" r="14"/><circle cx="758" cy="539" r="14"/>
+  </g>
+  <rect x="490" y="564" width="210" height="20" rx="10" fill="#d4c8a9" stroke="#958a6d" stroke-width="2"/>
+  <text x="600" y="678" text-anchor="middle" fill="#f0e6cf" font-family="Georgia,serif" font-size="12" letter-spacing="2" opacity=".55">UNE ILLUSTRATION DE L’INTERFACE · INTERFACE ILLUSTRATION</text>
+</svg>
