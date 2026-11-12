@@ -154,7 +154,7 @@ body{
     0 3px 0 #6b5a2a, 0 6px 10px rgba(0,0,0,.35),
     inset 0 0 0 1.5px rgba(212,175,55,.7),
     inset 0 1px 2px rgba(255,255,255,.25);
-  display:flex;align-items:center;justify-content:center;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
   font:700 12px "Courier New",monospace;color:#e8c96a;user-select:none;
   transition:transform .05s, box-shadow .05s;
 }
@@ -202,8 +202,8 @@ body{
 <div id="stage">
   <div id="scene">
     <div class="hint">
-      Tapez sur votre clavier — la machine frappe la feuille.<br>
-      Entrée&nbsp;: retour chariot &middot; Effacer&nbsp;: correction &middot; Échap&nbsp;: nouvelle feuille
+      Tapez sur votre clavier ou cliquez sur les touches de la machine — elle frappe la feuille.<br>
+      Entrée&nbsp;: retour chariot &middot; Effacer&nbsp;: correction &middot; Maj&nbsp;: majuscule &middot; Échap&nbsp;: nouvelle feuille
     </div>
     <div class="machine" id="machine">
       <div class="machine-shadow"></div>
@@ -239,8 +239,8 @@ body{
     <p>Machine à écrire — édition 1980</p>
     <button id="startBtn">Charger la feuille</button>
     <p class="small">
-      Utilisez votre clavier&nbsp;: chaque touche fait frapper la machine.<br>
-      Entrée = retour chariot &middot; Effacer = correction &middot; Échap = nouvelle feuille
+      Utilisez votre clavier ou cliquez sur les touches de la machine&nbsp;: elle frappe la feuille.<br>
+      Entrée = retour chariot &middot; Effacer = correction &middot; Maj = majuscule &middot; Échap = nouvelle feuille
     </p>
   </div>
 </div>
@@ -369,6 +369,30 @@ body{
     render(); moveCarriage(); feed(); playSpace();
   }
 
+  let majOn = false;
+  function pressVirtual(id) {
+    const el = document.querySelector(`[data-key="${CSS.escape(id)}"]`);
+    if (id === 'maj') {
+      majOn = !majOn;
+      if (el) el.classList.toggle('down', majOn);
+      playSpace();
+      return;
+    }
+    if (el) {
+      el.classList.add('down');
+      setTimeout(() => el.classList.remove('down'), 140);
+    }
+    if (id === 'space') { space(); return; }
+    if (id === 'enter') { doReturn(); return; }
+    if (id === 'back') { backspace(); return; }
+    insert(majOn ? id.toUpperCase() : id);
+    if (majOn) {
+      majOn = false;
+      const m = document.querySelector('[data-key="maj"]');
+      if (m) m.classList.remove('down');
+    }
+  }
+
   function keyFlash(key) {
     let id = null;
     if (key.length === 1) id = key === ' ' ? 'space' : key.toLowerCase();
@@ -397,6 +421,7 @@ body{
         b.className = 'key';
         b.dataset.key = k;
         b.textContent = k.toUpperCase();
+        b.addEventListener('click', () => pressVirtual(k));
         d.appendChild(b);
       }
       kb.appendChild(d);
@@ -409,6 +434,7 @@ body{
         b.className = 'key ' + cls;
         b.dataset.key = k;
         b.textContent = label;
+        b.addEventListener('click', () => pressVirtual(k));
         bottom.appendChild(b);
       });
     kb.appendChild(bottom);
